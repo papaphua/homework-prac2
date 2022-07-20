@@ -20,5 +20,7 @@
             CurMana = _maxMana;
             SpellCost = _spellCost;
         }
+
+        internal override string Name { get; } = "Wizard";
     }
 }

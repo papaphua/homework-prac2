@@ -18,5 +18,7 @@
             MaxAmmo = _maxAmmo;
             CurAmmo = _maxAmmo;
         }
+
+        internal override string Name { get; } = "Archer";
     }
 }

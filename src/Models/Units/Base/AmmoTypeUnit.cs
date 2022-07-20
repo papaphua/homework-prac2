@@ -6,6 +6,7 @@
 
         private int _curAmmo;
 
+        internal override string Name { get; } = "AmmoTypeUnit";
         internal int MaxAmmo { get => _maxAmmo; init => _maxAmmo = value; }
         internal int CurAmmo
         {

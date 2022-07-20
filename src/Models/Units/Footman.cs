@@ -15,5 +15,7 @@
             MagicResist = _magicResist;
             Damage = _damage;
         }
+
+        internal override string Name { get; } = "Footman";
     }
 }

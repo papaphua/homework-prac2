@@ -1,6 +1,6 @@
 ﻿namespace homework_prac2
 {
-    public abstract class Unit : IEquatable<Unit>
+    public abstract class Unit
     {
         private readonly float _maxHealth;
         private readonly float _physResist;
@@ -9,6 +9,7 @@
 
         private float _curHealth;
 
+        internal virtual string Name { get; } = "Unit";
         internal float MagicResist { get => _magicResist; init => _magicResist = value; }
         internal float MaxHealth { get => _maxHealth; init => _maxHealth = value; }
         internal float PhysResist { get => _physResist; init => _physResist = value; }
@@ -44,18 +45,6 @@
         {
             float damageDealt = CalcDamage(target);
             target.CurHealth -= damageDealt;
-        }
-
-        public bool Equals(Unit? other)
-        {
-            if (new UnitComparer().Equals(this, other))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
     }
 }

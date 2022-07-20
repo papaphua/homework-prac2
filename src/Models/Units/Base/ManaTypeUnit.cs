@@ -7,6 +7,7 @@
 
         private float _curMana;
 
+        internal override string Name { get; } = "ManaTypeUnit";
         internal float MaxMana { get => _maxMana; init => _maxMana = value; }
         internal float CurMana
         {
