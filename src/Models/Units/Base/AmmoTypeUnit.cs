@@ -28,7 +28,7 @@
 
         internal override void Attack(Unit target)
         {
-            if(CurAmmo > 0)
+            if(CurAmmo > 0 && IsAlive())
             {
                 base.Attack(target);
                 CurAmmo -= 1;

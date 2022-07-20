@@ -37,7 +37,7 @@
 
         internal override void Attack(Unit target)
         {
-            if(CurMana > SpellCost)
+            if(CurMana > SpellCost && IsAlive())
             {
                 base.Attack(target);
                 CurMana -= SpellCost;

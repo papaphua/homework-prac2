@@ -4,12 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Team team = Team.GenerateRandom(5);
+            Team t1 = Team.GenerateRandom(2);
+            Team t2 = Team.GenerateRandom(2);
 
-            for (int i = 0; i < team.Count; i++)
-            {
-                Console.WriteLine(team[i].Name);
-            }
+            Simulator simulator = new Simulator(t1, t2);
         }
     }
 }

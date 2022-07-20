@@ -35,16 +35,19 @@
         internal virtual float CalcDamage(Unit target)
         {
             float damageAbsorb = Damage * (target.PhysResist / 100f);
-            Console.WriteLine($"absorvPerc = {damageAbsorb}");
             float damageDealt = Damage - damageAbsorb;
-            Console.WriteLine($"damDealt = {damageDealt}");
             return damageDealt;
         }
 
         internal virtual void Attack(Unit target)
         {
-            float damageDealt = CalcDamage(target);
-            target.CurHealth -= damageDealt;
+            if (IsAlive())
+            {
+                float damageDealt = CalcDamage(target);
+                target.CurHealth -= damageDealt;
+            }
         }
+
+        internal bool IsAlive() => CurHealth > 0 ? true : false;
     }
 }
